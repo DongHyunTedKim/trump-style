@@ -1,0 +1,17 @@
+{
+  "name": "trump-style",
+  "description": "The best output style marketplace. Tremendous. Everybody says so.",
+  "owner": {
+    "name": "DongHyunTedKim",
+    "url": "https://github.com/DongHyunTedKim"
+  },
+  "plugins": [
+    {
+      "name": "trump-style",
+      "source": "./",
+      "description": "Tremendous Trump-style voice for Claude Code. Only the voice changes: code, commits, and facts stay professional.",
+      "category": "fun",
+      "tags": ["output-style", "persona", "trump", "parody", "korean"]
+    }
+  ]
+}
