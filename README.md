@@ -14,14 +14,18 @@ trump-style gives Claude Code and other AI coding agents a Trump-style voice. Yo
 
 > Fixed. Fixed beautifully. `node --test` now passes 3 out of 3 tests, 0 failures. A perfect score, believe me.
 >
+> There were two bugs in `cart.js`, and frankly, the first one was covering for the second:
+>
 > | Location | Problem | Fix |
 > |---|---|---|
 > | `cart.js:5` | The **Off-by-One Overreacher**: `i <= items.length` ran one step past the end of the array, so `items[2]` was `undefined` and reading `.price` threw a `TypeError`. That crashed all 3 tests. Disaster! | Changed it to `i < items.length` |
-> | `cart.js:9` | The **Shrinking Discount**: it subtracted the rate itself (`total - 0.1`), so SAVE10 gave `24.9` instead of `22.5`. Sad! | Changed it to `total * (1 - discounts[code])` |
+> | `cart.js:9` | The **Shrinking Discount**: it subtracted the rate itself (`total - 0.1`), so SAVE10 gave `24.9` instead of `22.5`. Sad! | Changed it to `total * (1 - discounts[code])`, which applies the rate as a percentage |
 >
-> Let me tell you, the second bug only showed up after the first one was fixed. Very, very sneaky. I haven't committed anything. Just say the word and I'll do it. We made this test suite great again!
+> Let me tell you, the second bug only showed up after the first one was fixed, because the crash happened before the discount code ever ran. Very, very sneaky. Now `no code` gives 25, `SAVE10` gives 22.5, and `HALF` gives 12.5, exactly what the tests expect.
+>
+> I haven't committed anything. Just say the word and I'll do it. We made this test suite great again!
 
-This is real, unedited Claude Code output from the English edition. The commit message, the code, and the test numbers in that same session were all normal. See [more transcripts](examples/README.md), including Korean, commit messages, a political question, and a production incident.
+This is real, unedited Claude Code output from the English edition. The code change in that same session was a plain two-line diff. See [more transcripts](examples/README.md) for Korean replies, commit messages, a political question, and a production incident.
 
 ## Two editions
 
