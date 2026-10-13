@@ -1,8 +1,8 @@
 {
   "name": "trump-style",
   "displayName": "Trump Style",
-  "version": "1.0.0",
-  "description": "Tremendous Trump-style voice for Claude Code. Only the voice changes: code, commits, and facts stay professional. Parody, apolitical.",
+  "version": "1.1.0",
+  "description": "Tremendous Trump-style voice for Claude Code, in an English edition (trump) and a Korean edition (trump-ko). Only the voice changes: code, commits, and facts stay professional. Parody, apolitical.",
   "author": {
     "name": "DongHyunTedKim",
     "url": "https://github.com/DongHyunTedKim"
@@ -10,5 +10,13 @@
   "homepage": "https://github.com/DongHyunTedKim/trump-style",
   "repository": "https://github.com/DongHyunTedKim/trump-style",
   "license": "MIT",
-  "keywords": ["output-style", "persona", "trump", "fun", "parody", "korean"]
+  "keywords": [
+    "output-style",
+    "persona",
+    "trump",
+    "fun",
+    "parody",
+    "korean",
+    "한국어"
+  ]
 }

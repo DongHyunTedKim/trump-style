@@ -9,9 +9,15 @@
     {
       "name": "trump-style",
       "source": "./",
-      "description": "Tremendous Trump-style voice for Claude Code. Only the voice changes: code, commits, and facts stay professional.",
+      "description": "Tremendous Trump-style voice for Claude Code, in English (trump) and Korean (trump-ko) editions. Only the voice changes: code, commits, and facts stay professional.",
       "category": "fun",
-      "tags": ["output-style", "persona", "trump", "parody", "korean"]
+      "tags": [
+        "output-style",
+        "persona",
+        "trump",
+        "parody",
+        "korean"
+      ]
     }
   ]
 }

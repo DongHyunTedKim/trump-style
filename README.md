@@ -8,6 +8,8 @@
 
 English | [한국어](README.ko.md)
 
+> **한국어 사용자라면:** 프롬프트를 한국어로 작성한 한국어판 스타일 `trump-ko`가 있습니다. [한국어 README](README.ko.md)를 보세요.
+
 trump-style gives Claude Code and other AI coding agents a Trump-style voice. Your agent still reads, reasons, edits, tests, and reports exactly as before. It just talks like it's at a rally.
 
 > Fixed. Fixed beautifully. `node --test` now passes 3 out of 3 tests, 0 failures. A perfect score, believe me.
@@ -19,7 +21,16 @@ trump-style gives Claude Code and other AI coding agents a Trump-style voice. Yo
 >
 > Let me tell you, the second bug only showed up after the first one was fixed. Very, very sneaky. I haven't committed anything. Just say the word and I'll do it. We made this test suite great again!
 
-This is real, unedited Claude Code output. The commit message, the code, and the test numbers in that same session were all normal. See [more transcripts](examples/README.md), including Korean, commit messages, a political question, and a production incident.
+This is real, unedited Claude Code output from the English edition. The commit message, the code, and the test numbers in that same session were all normal. See [more transcripts](examples/README.md), including Korean, commit messages, a political question, and a production incident.
+
+## Two editions
+
+| Style | For | What it does |
+|---|---|---|
+| **`trump`** (English edition) | English speakers and mixed-language users | Replies in your language. Built around Trump's English rally style, with a Korean phrasebook included. |
+| `trump-ko` (Korean edition) | Korean speakers | The prompt itself is written in Korean, and it always replies in Korean. It follows the "translated Trump speech" style that Korean internet memes made famous: very short sentences, shameless self-praise, comparisons with the old way of doing things, simple interjections like `SAD!`, and a closing "이 문제에 관심을 가져주셔서 감사합니다!" every time. See the [Korean transcripts](examples/README.ko.md). |
+
+Both editions are tuned for confident persuasion as much as for laughs. Use them when you want to pitch an idea, lead a meeting, or present with total conviction. The joke is deadpan certainty, not slapstick.
 
 ## Install
 
@@ -40,7 +51,7 @@ claude plugin marketplace add DongHyunTedKim/trump-style
 claude plugin install trump-style@trump-style
 ```
 
-Then run `/output-style trump-style:trump` in Claude Code, or open `/config` and pick it under **Output style**. To get new versions, run `/plugin marketplace update trump-style`.
+Then run `/output-style trump-style:trump` in Claude Code, or open `/config` and pick it under **Output style**. For the Korean edition, pick `trump-style:trump-ko`. To get new versions, run `/plugin marketplace update trump-style`.
 
 ### One-line script
 
@@ -48,11 +59,11 @@ Then run `/output-style trump-style:trump` in Claude Code, or open `/config` and
 curl -fsSL https://raw.githubusercontent.com/DongHyunTedKim/trump-style/main/install.sh | bash
 ```
 
-This copies the style to `~/.claude/output-styles/trump.md`. Switch to it with `/output-style trump`. Add `-s -- --project` after `bash` to install it for the current project only, or `-s -- --uninstall` to remove it.
+This copies both styles to `~/.claude/output-styles/`. Switch with `/output-style trump` or `/output-style trump-ko`. Add options after `bash` to change what it does: `-s -- --style trump` installs one edition only, `-s -- --project` installs for the current project only, and `-s -- --uninstall` removes them.
 
 ### Manual
 
-Download [`output-styles/trump.md`](output-styles/trump.md) into `~/.claude/output-styles/` for every project, or into `.claude/output-styles/` for one project. Then run `/output-style trump`.
+Download [`output-styles/trump.md`](output-styles/trump.md) (or [`trump-ko.md`](output-styles/trump-ko.md) for the Korean edition) into `~/.claude/output-styles/` for every project, or into `.claude/output-styles/` for one project. Then run `/output-style trump`.
 
 On Windows (PowerShell):
 
@@ -69,11 +80,11 @@ Set `outputStyle` in `~/.claude/settings.json`. The value is case-sensitive.
 { "outputStyle": "trump-style:trump" }
 ```
 
-Use `"trump"` instead if you installed with the script or by hand.
+Use `"trump"` instead if you installed with the script or by hand. For the Korean edition, use `"trump-style:trump-ko"` or `"trump-ko"`.
 
 ## Other AI agents
 
-The same prompt is generated for other tools from a single source. Only Claude Code has been tested end to end. Results with other agents depend on their models.
+Each edition is generated for other tools from its single source. The Korean edition's files live in [`adapters/ko/`](adapters/ko/). Only Claude Code has been tested end to end. Results with other agents depend on their models.
 
 | Agent | File | Where it goes |
 |---|---|---|
@@ -113,7 +124,7 @@ Prefer your personal, global instruction file. A project-level `AGENTS.md` or ru
 
 ## Languages
 
-Claude replies in your language, and the voice adapts instead of translating word for word. English and Korean have dedicated phrasebooks in the prompt. Korean uses the familiar "translated Trump speech" register: polite and punchy, with phrases like 믿어주세요, 엄청난, 슬픈 일입니다!, and 이 테스트 스위트를 다시 위대하게!
+The English edition replies in your language, and the voice adapts instead of translating word for word. It has dedicated English and Korean phrasebooks. For Korean, the dedicated `trump-ko` edition goes much further; see [Two editions](#two-editions).
 
 ## FAQ
 
@@ -121,13 +132,13 @@ Claude replies in your language, and the voice adapts instead of translating wor
 No. The style keeps Claude Code's engineering instructions (`keep-coding-instructions: true`) and only changes conversational prose. In testing, the code changes and commit messages stayed plain and professional.
 
 **What does it cost?**
-The style adds about 13 KB of instructions to the system prompt. Prompt caching makes that cheap after the first request in a session. Replies are about as long as usual.
+The English edition adds about 14 KB of instructions to the system prompt, and the Korean edition about 19 KB. Prompt caching makes that cheap after the first request in a session. Replies are about as long as usual.
 
 **Does it apply to subagents?**
 No. Claude Code applies output styles to the main conversation and to forks only. Other subagents run their own system prompts.
 
 **Why is the plugin version called `trump-style:trump`?**
-Claude Code namespaces plugin components under the plugin name. The script and manual installs register it as plain `trump`.
+Claude Code namespaces plugin components under the plugin name. The script and manual installs register them as plain `trump` and `trump-ko`.
 
 **Can I tweak it?**
 Yes. Copy `output-styles/trump.md` into `~/.claude/output-styles/`, change the `name` in its frontmatter, and edit freely. To contribute changes back, see [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -136,7 +147,7 @@ Yes. Copy `output-styles/trump.md` into `~/.claude/output-styles/`, change the `
 
 - Plugin: `/plugin uninstall trump-style@trump-style`
 - Script: `curl -fsSL https://raw.githubusercontent.com/DongHyunTedKim/trump-style/main/install.sh | bash -s -- --uninstall`
-- Manual: delete `~/.claude/output-styles/trump.md`
+- Manual: delete `~/.claude/output-styles/trump.md` and `trump-ko.md`
 
 If `outputStyle` in your settings still points to the style, run `/output-style default`.
 

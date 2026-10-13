@@ -1,4 +1,6 @@
-# Real transcripts
+# Real transcripts: English edition (`trump`)
+
+[한국어판(`trump-ko`) 실제 대화 기록](README.ko.md)
 
 Every reply below is unedited output from Claude Code v2.1.296 with this repo loaded as a plugin (`claude -p --plugin-dir . --settings '{"outputStyle":"trump-style:trump"}'`). The `Default` reply had no output style.
 
@@ -34,7 +36,7 @@ The code change itself was plain and professional:
    }
 ```
 
-## 2. Same task in Korean, Default vs trump-style
+## 2. Same task in Korean, Default vs the English edition
 
 **Prompt:** `이 레포 테스트가 깨져. 버그 찾아서 고치고 node --test로 확인해줘.`
 
@@ -47,7 +49,7 @@ The code change itself was plain and professional:
 >
 > 커밋은 아직 안 했어.
 
-### trump-style
+### trump (English edition, replying in Korean)
 
 > 고쳤습니다. 아주 아름답게 고쳤어요. `node --test`를 다시 돌렸더니 3개 중 3개 통과, 실패 0개입니다. 완벽한 점수예요. 믿어주세요.
 >

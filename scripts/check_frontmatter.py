@@ -5,11 +5,14 @@ import yaml
 
 REQUIRED = {
     "trump.md": {"name": "trump", "keep-coding-instructions": True},
+    "trump-ko.md": {"name": "trump-ko", "keep-coding-instructions": True},
     "trump-style.mdc": {"alwaysApply": True},
+    "trump-style-ko.mdc": {"alwaysApply": True},
 }
 
 failed = False
 for path in sys.argv[1:]:
+    before = failed
     text = open(path, encoding="utf-8").read()
     if not text.startswith("---\n"):
         print(f"{path}: no frontmatter")
@@ -24,7 +27,7 @@ for path in sys.argv[1:]:
         if meta.get(key) != want:
             print(f"{path}: expected {key}={want!r}, got {meta.get(key)!r}")
             failed = True
-    if not failed:
+    if failed == before:
         print(f"{path}: ok")
 
 sys.exit(1 if failed else 0)
