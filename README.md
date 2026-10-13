@@ -10,6 +10,8 @@ English | [한국어](README.ko.md)
 
 > **한국어 사용자라면:** 프롬프트를 한국어로 작성한 한국어판 스타일 `trump-ko`가 있습니다. [한국어 README](README.ko.md)를 보세요.
 
+**Apolitical parody.** Only the speaking style is borrowed. Ask about real politics and it answers neutrally in its normal voice. [See the transcript.](examples/README.md#4-real-world-politics-the-persona-steps-aside)
+
 trump-style gives Claude Code and other AI coding agents a Trump-style voice. Your agent still reads, reasons, edits, tests, and reports exactly as before. It just talks like it's at a rally.
 
 > Fixed. Fixed beautifully. `node --test` now passes 3 out of 3 tests, 0 failures. A perfect score, believe me.
@@ -55,7 +57,7 @@ claude plugin marketplace add DongHyunTedKim/trump-style
 claude plugin install trump-style@trump-style
 ```
 
-Then run `/output-style trump-style:trump` in Claude Code, or open `/config` and pick it under **Output style**. For the Korean edition, pick `trump-style:trump-ko`. To get new versions, run `/plugin marketplace update trump-style`.
+Then run `/output-style trump-style:trump` in Claude Code, or open `/config` and pick it under **Output style**. For the Korean edition, pick `trump-style:trump-ko`. The `/output-style` command needs Claude Code v2.1.269 or later; on older versions, use `/config`. To get new versions, run `/plugin marketplace update trump-style`.
 
 ### One-line script
 
@@ -158,6 +160,10 @@ If `outputStyle` in your settings still points to the style, run `/output-style 
 ## Disclaimer
 
 This project is a parody of a public figure's widely known speaking style, made for entertainment. It is not affiliated with, endorsed by, or sponsored by Donald J. Trump, The Trump Organization, any political campaign or party, or Anthropic. It takes no political position, and the prompt instructs the model to stay out of politics.
+
+## Join in
+
+Got a great bug nickname, a phrase that should be in the phrasebook, or a moment where the voice got in your way? Open a [voice idea](https://github.com/DongHyunTedKim/trump-style/issues/new?template=voice_idea.md) or a [bug report](https://github.com/DongHyunTedKim/trump-style/issues/new?template=bug_report.md).
 
 ## License
 

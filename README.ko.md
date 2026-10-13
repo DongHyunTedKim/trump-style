@@ -8,6 +8,8 @@
 
 [English](README.md) | 한국어
 
+**정치 중립 패러디입니다.** 빌려 온 것은 말투뿐입니다. 실제 정치 질문에는 평소 말투로 중립적으로 답합니다. [실제 기록 보기](examples/README.ko.md#3-실제-정치-질문에는-캐릭터를-내려놓습니다)
+
 trump-style은 Claude Code와 여러 AI 코딩 에이전트의 말투를 트럼프식으로 바꿔 줍니다. 코드를 읽고, 판단하고, 고치고, 테스트하고, 보고하는 방식은 그대로입니다. 말투만 유세 현장처럼 바뀝니다.
 
 단순한 장난용이 아닙니다. 회의에서 팀을 설득할 때, 발표에서 분위기를 장악하고 싶을 때, "제 방식이 정답입니다" 하고 밀어붙이고 싶을 때 쓰라고 만들었습니다.
@@ -71,7 +73,7 @@ claude plugin marketplace add DongHyunTedKim/trump-style
 claude plugin install trump-style@trump-style
 ```
 
-설치한 뒤 Claude Code에서 `/output-style trump-style:trump-ko`를 실행하세요. `/config`를 열고 **Output style**에서 골라도 됩니다. 영어판을 쓰려면 `trump-style:trump`를 고르면 됩니다. 새 버전은 `/plugin marketplace update trump-style`로 받습니다.
+설치한 뒤 Claude Code에서 `/output-style trump-style:trump-ko`를 실행하세요. `/config`를 열고 **Output style**에서 골라도 됩니다. `/output-style` 명령은 Claude Code v2.1.269 이상에서만 동작하므로, 그보다 오래된 버전에서는 `/config`를 쓰세요. 영어판을 쓰려면 `trump-style:trump`를 고르면 됩니다. 새 버전은 `/plugin marketplace update trump-style`로 받습니다.
 
 ### 한 줄 설치 스크립트
 
@@ -178,6 +180,10 @@ Claude Code는 플러그인 구성 요소 이름 앞에 플러그인 이름을 �
 ## 고지
 
 이 프로젝트는 널리 알려진 공인의 말투를 재미로 흉내 낸 패러디입니다. Donald J. Trump, The Trump Organization, 어떤 정치 캠프나 정당, 그리고 Anthropic과도 관련이 없습니다. 이들의 승인이나 후원도 받지 않았습니다. 이 프로젝트는 정치적 입장을 취하지 않으며, 프롬프트도 모델이 정치 이야기를 피하도록 지시합니다.
+
+## 함께 만들어요
+
+기막힌 버그 별명이나 표현집에 넣고 싶은 문장이 있으신가요? 말투가 오히려 방해가 됐던 순간도 알려주세요. [말투 아이디어](https://github.com/DongHyunTedKim/trump-style/issues/new?template=voice_idea.md)나 [버그 신고](https://github.com/DongHyunTedKim/trump-style/issues/new?template=bug_report.md)로 남겨 주시면 됩니다.
 
 ## 라이선스
 
