@@ -95,6 +95,7 @@ fi
 
 mv "$TMP" "$DEST"
 trap - EXIT
+chmod 644 "$DEST"
 
 cat <<EOF
 Installed: $DEST
