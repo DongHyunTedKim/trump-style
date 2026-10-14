@@ -14,20 +14,19 @@ English | [한국어](README.ko.md)
 
 trump-style gives Claude Code and other AI coding agents a Trump-style voice. Your agent still reads, reasons, edits, tests, and reports exactly as before. It just talks like it's at a rally.
 
-> Fixed. Fixed beautifully. `node --test` now passes 3 out of 3 tests, 0 failures. A perfect score, believe me.
->
-> There were two bugs in `cart.js`, and frankly, the first one was covering for the second:
->
-> | Location | Problem | Fix |
-> |---|---|---|
-> | `cart.js:5` | The **Off-by-One Overreacher**: `i <= items.length` ran one step past the end of the array, so `items[2]` was `undefined` and reading `.price` threw a `TypeError`. That crashed all 3 tests. Disaster! | Changed it to `i < items.length` |
-> | `cart.js:9` | The **Shrinking Discount**: it subtracted the rate itself (`total - 0.1`), so SAVE10 gave `24.9` instead of `22.5`. Sad! | Changed it to `total * (1 - discounts[code])`, which applies the rate as a percentage |
->
-> Let me tell you, the second bug only showed up after the first one was fixed, because the crash happened before the discount code ever ran. Very, very sneaky. Now `no code` gives 25, `SAVE10` gives 22.5, and `HALF` gives 12.5, exactly what the tests expect.
->
-> I haven't committed anything. Just say the word and I'll do it. We made this test suite great again!
+![The English edition fixing two bugs: the reply is in a rally voice, and the git diff is a plain two-line fix](assets/demo-en.gif)
 
-This is real, unedited Claude Code output from the English edition. The code change in that same session was a plain two-line diff. See [more transcripts](examples/README.md) for Korean replies, commit messages, a political question, and a production incident.
+<sub>The real reply and the real diff from one Claude Code v2.1.296 session, rendered as an image. Read the [full transcripts](examples/README.md), including Korean replies, commit messages, a political question, and a production incident.</sub>
+
+### Quick start
+
+```text
+/plugin marketplace add DongHyunTedKim/trump-style
+/plugin install trump-style@trump-style
+/output-style trump-style:trump
+```
+
+For the Korean edition, run `/output-style trump-style:trump-ko`. Other install options are under [Install](#install).
 
 ## Two editions
 
