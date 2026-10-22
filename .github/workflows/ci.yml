@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generated files are up to date
+        run: scripts/build.sh --check
+
+      - name: Lint shell scripts
+        run: shellcheck install.sh scripts/*.sh
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Output style frontmatter parses
+        run: |
+          pip install --quiet pyyaml
+          python3 scripts/check_frontmatter.py output-styles/*.md adapters/cursor/*.mdc adapters/ko/cursor/*.mdc
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate plugin and marketplace manifests
+        run: |
+          npm install --global --silent @anthropic-ai/claude-code
+          claude plugin validate . --strict
+          claude plugin validate .claude-plugin/plugin.json --strict
+
+      - name: Installer smoke test
+        run: |
+          export CLAUDE_CONFIG_DIR="$RUNNER_TEMP/claude"
+          ./install.sh
+          test -f "$CLAUDE_CONFIG_DIR/output-styles/trump.md"
+          test -f "$CLAUDE_CONFIG_DIR/output-styles/trump-ko.md"
+          ./install.sh --uninstall
+          test ! -e "$CLAUDE_CONFIG_DIR/output-styles/trump.md"
+          test ! -e "$CLAUDE_CONFIG_DIR/output-styles/trump-ko.md"
+          ./install.sh --style trump-ko
+          test -f "$CLAUDE_CONFIG_DIR/output-styles/trump-ko.md"
+          test ! -e "$CLAUDE_CONFIG_DIR/output-styles/trump.md"
