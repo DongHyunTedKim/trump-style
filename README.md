@@ -2,6 +2,8 @@
 
 **Claude Code 최고의 아웃풋 스타일입니다. 엄청나죠. 다들 그렇게 말합니다.**
 
+<p align="center"><img src="assets/banner-ko.png" width="300" alt="유세장 피켓 스타일 배너: 당신들의 프로젝트를 다시 위대하게!"></p>
+
 [![CI](https://github.com/DongHyunTedKim/trump-style/actions/workflows/ci.yml/badge.svg)](https://github.com/DongHyunTedKim/trump-style/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-d97757.svg)](#claude-code-플러그인-추천)

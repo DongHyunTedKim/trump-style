@@ -2,6 +2,8 @@
 
 **The best output style for Claude Code. Tremendous. Everybody says so.**
 
+<p align="center"><img src="assets/banner-en.png" width="300" alt="Rally-sign style banner: Make your project great again!"></p>
+
 [![CI](https://github.com/DongHyunTedKim/trump-style/actions/workflows/ci.yml/badge.svg)](https://github.com/DongHyunTedKim/trump-style/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-d97757.svg)](#claude-code-plugin-recommended)
